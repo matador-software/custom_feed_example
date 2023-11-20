@@ -27,16 +27,18 @@
 /**
  * Filter the locate template function for the feed you are added
  * You need to 2 check one the root and one the each
+ *
+ * You don't need this function if you add this code to your theme functions.php file
  */
 add_filter( 'matador_locate_template', static function ( $template, $name, $subdirectory ) {
 
-	if( "custom-feed.php" === $name && file_exists( __DIR__ . "/templates/feeds/custom-feed.php" ) ){
+	if( "custom-feed.php" === $name && file_exists( __DIR__ . "/matador/feeds/custom-feed.php" ) ){
 
-		return __DIR__. "/templates/feeds/custom-feed.php";
+		return __DIR__. "/matador/feeds/custom-feed.php";
 	}
-	if( "custom-feed-each.php" === $name && file_exists( __DIR__ . "/templates/feeds/each/custom-feed-each.php" ) ){
+	if( "custom-feed-each.php" === $name && file_exists( __DIR__ . "/matador/feeds/each/custom-feed-each.php" ) ){
 
-		return __DIR__ . "/templates/feeds/each/custom-feed-each.php";
+		return __DIR__ . "/matador/feeds/each/custom-feed-each.php";
 	}
 
 	return $template;
