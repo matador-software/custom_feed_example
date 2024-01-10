@@ -34,7 +34,7 @@ add_filter( 'matador_locate_template', static function ( $template, $name, $subd
 
 	if( "custom-feed.php" === $name && file_exists( __DIR__ . "/matador/feeds/custom-feed.php" ) ){
 
-		return __DIR__. "/matador/feeds/custom-feed.php";
+		return __DIR__ . "/matador/feeds/custom-feed.php";
 	}
 	if( "custom-feed-each.php" === $name && file_exists( __DIR__ . "/matador/feeds/each/custom-feed-each.php" ) ){
 
